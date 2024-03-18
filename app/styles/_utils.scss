@@ -1,0 +1,12 @@
+$max-width: 1400px;
+$font-default: system-ui, Arial, sans-serif;
+$font-body: "Noto Sans", $font-default;
+$font-heading: "Patrick Hand", $font-default;
+
+$color-bg-01: #f4e3b2;
+
+@mixin bp($mq) {
+    @media screen and ($mq) {
+        @content
+    }
+}

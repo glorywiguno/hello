@@ -1,0 +1,30 @@
+@import "./utils";
+
+html, body {
+    * {
+        box-sizing: border-box;
+        font-family: $font-body;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: $font-heading;
+    }
+}
+
+body {
+    background-color:#fdf7ed;
+}
+.main {
+    padding: 50px 6.5%;
+}
+
+.l-mw {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.paper {
+    padding: 1rem;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.12);
+}

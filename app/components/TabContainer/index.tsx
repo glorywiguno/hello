@@ -16,7 +16,6 @@ interface TabContainerProps extends React.PropsWithChildren {
   // eslint-disable-next-line
   onRibbonClick: (e?: any) => void;
 }
-
 /**
  * Tab ribbon component
  */
@@ -44,9 +43,12 @@ export default function TabContainer(props: TabContainerProps) {
       <button
         className="tabContainer__ribbon"
         style={styles && styles.ribbon ? { ...styles.ribbon } : undefined}
-        onClick={onRibbonClick}
+        onClick={(e) => {
+          onRibbonClick(e)
+          e.currentTarget.blur();
+        }}
       >
-        {tabRibbonText}
+        <span>{tabRibbonText}</span>
       </button>
       <div
         className="tabContainer__body"

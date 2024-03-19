@@ -1,41 +1,64 @@
 @import "../../styles/_utils";
 
 .tabContainer {
-    overflow: visible;
-    transition: all 0.3s ease-out;
-    pointer-events: none;
-    padding: 0 0.5rem 1.5rem;
+  overflow: visible;
+  transition: all 0.3s ease-out;
+  pointer-events: none;
+  padding: 0 0.5rem 1.5rem;
 
-    &__ribbon,
-    &__body {
-        background-color: #f4e3b2;
-        pointer-events: auto;
+  &__ribbon,
+  &__body {
+    background-color: var(--color-bg-01);
+    pointer-events: all;
+  }
+
+  &__ribbon {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+    position: relative;
+    border-radius: 0;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    outline: 0;
+    padding: 0.5em 0.75em;
+    border: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+
+    span {
+      font-weight: inherit;
+      display: inline-block;
+      position: relative;
+      overflow: visible;
     }
 
-    &__ribbon {
-        font-family: $font-heading;
-        font-size: 1.4rem;
-        position: relative;
-        border-radius: 0;
-        border-top-left-radius: 0.25rem;
-        border-top-right-radius: 0.25rem;
-        outline: 0;
-        padding: 0.5em 0.75em;
-        border: none;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.12);
+    &:hover,
+    &:focus {
+      span {
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          width: 100%;
+          bottom: -0.125rem;
+          border-bottom: 2px dashed var(--color-neutral-01);
+        }
+      }
     }
+  }
 
-    &__body {
-        position: relative;
-        padding: 2em 1.2em;
-        font-size: 1em;
-        flex: 1 1 100%;
-        width: 100%;
-        box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.12);
-        min-height: 85vh;
-        padding-bottom: 30vh;
-    }
+  &__body {
+    position: relative;
+    padding: 2em 1.2em;
+    font-size: 1em;
+    flex: 1 1 100%;
+    width: 100%;
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.12);
+    min-height: 85vh;
+    padding-bottom: 30vh;
+  }
 
 }

@@ -32,16 +32,25 @@ export default function App() {
 }
 
 export const links: LinksFunction = () => [
-  { rel: "preload", href: "https://fonts.googleapis.com" },
-  { rel: "preload", href: "https://fonts.gstatic.com", crossOrigin: undefined },
+  { rel: "preload", href: "https://fonts.googleapis.com", as: "style"},
+  { rel: "preload", href: "https://fonts.gstatic.com", crossOrigin: undefined, as: "style" },
   {
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&display=swap",
+    href: "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..600;1,400..600&family=Fredoka:wght@400..700&display=swap",
     crossOrigin: undefined,
   },
   { rel: "stylesheet", href: normalizeCss },
 ];
 
 export function HydrateFallback() {
-  return <p>Loading...</p>;
+  return (
+    <div
+      style={{
+        position: "fixed",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
+      }}
+    >Loading...</div>
+  );
 }

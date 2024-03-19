@@ -1,9 +1,25 @@
-$max-width: 1400px;
-$font-default: system-ui, Arial, sans-serif;
-$font-body: "Noto Sans", $font-default;
-$font-heading: "Patrick Hand", $font-default;
+/*
+ * variables and mixins
+ */
 
-$color-bg-01: #f4e3b2;
+$font-default: system-ui, Arial, sans-serif;
+
+:root {
+  --max-width: 1400px;
+  --font-body: "Nunito", #{$font-default};
+  --font-heading: "Fredoka", #{$font-default};
+  --color-neutral-01: #333;
+  --color-bg-01: #f4e3b2;
+  --color-bg-02: #cddba9;
+  --color-bg-03: #a9def9;
+  --color-bg-04: #fcb1a6;
+  --color-bg-05: #c9b3e6;
+  --color-bg-disabled: #d6d6d6;
+  --color-disabled: #a3a3a3;
+  --shadow-01: 2px 2px 4px 0px rgba(0,0,0,0.12);
+  --shadow-02: 2px 2px 6px 0px rgba(0,0,0,0.12);
+  --shadow-03: 2px 2px 4px 0px rgba(0,0,0,0.22);
+}
 
 @mixin bp($mq) {
     @media screen and ($mq) {

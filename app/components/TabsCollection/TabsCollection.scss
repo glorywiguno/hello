@@ -1,0 +1,74 @@
+@import "../../styles/_utils";
+
+@keyframes navBtnPop {
+  from {
+    transform: translate(0, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, -50%);
+    opacity: 1;
+  }
+}
+
+
+.tab-overlay-area {
+  position: fixed;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2.5%;
+  padding-top: 0;
+  pointer-events: none;
+
+  &__nav-btn {
+    z-index: 101;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    pointer-events:all;
+    cursor: pointer;
+    min-width: 1.125rem;
+    min-height: 1.125rem;
+    animation: navBtnPop 0.3s ease-out;
+    .svg-icon {
+      width: 1.2rem;
+    }
+
+    &--left {
+      left: 2%;
+    }
+
+    &--right {
+      right: 2%;
+    }
+  }
+
+  &__item {
+    position: absolute;
+    width: 95%;
+    min-height: 85vh;
+    max-height: 100%;
+    // transform: translate(0,80vh);
+    transform-origin: top left;
+
+    &--tilt-right { transform: translate(0, 79.5vh) rotate(0.75deg) }
+    &--tilt-left { transform: translate(0, 80.5vh) rotate(-0.75deg) }
+    &--active {
+      overflow-y: scroll;
+    }
+  }
+
+  @include bp('(min-width: 1080px)') {
+    &__nav-btn {
+      .svg-icon {
+        width: 1.8rem;
+      }
+    }
+  }
+}

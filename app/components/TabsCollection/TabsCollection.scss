@@ -11,6 +11,17 @@
   }
 }
 
+@keyframes navBtnClosePop {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 50%);
+    opacity: 1;
+  }
+}
+
 
 .tab-overlay-area {
   position: fixed;
@@ -36,8 +47,21 @@
     min-width: 1.125rem;
     min-height: 1.125rem;
     animation: navBtnPop 0.3s ease-out;
+
     .svg-icon {
       width: 1.2rem;
+    }
+
+    &--close {
+      top: initial;
+      bottom: 8%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      font-family: var(--font-heading);
+      animation-name: navBtnClosePop;
+        .svg-icon {
+          width: 1.5rem;
+        }
     }
 
     &--left {
@@ -52,13 +76,17 @@
   &__item {
     position: absolute;
     width: 95%;
-    min-height: 85vh;
     max-height: 100%;
-    // transform: translate(0,80vh);
-    transform-origin: top left;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(40vh);
 
-    &--tilt-right { transform: translate(0, 79.5vh) rotate(0.75deg) }
-    &--tilt-left { transform: translate(0, 80.5vh) rotate(-0.75deg) }
+    &--tilt-right {
+      transform: translateX(-50%) translateY(39.75vh) rotate(0.55deg);
+    }
+    &--tilt-left {
+      transform: translateX(-50%) translateY(40.25vh) rotate(-0.55deg);
+    }
     &--active {
       overflow-y: scroll;
     }
@@ -68,6 +96,12 @@
     &__nav-btn {
       .svg-icon {
         width: 1.8rem;
+      }
+
+      &--close {
+        .svg-icon {
+          width: 2rem;
+        }
       }
     }
   }

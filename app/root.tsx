@@ -39,6 +39,11 @@ export const links: LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400..600;1,400..600&family=Fredoka:wght@400..700&display=swap",
     crossOrigin: undefined,
   },
+  {
+    rel: "shortcut icon",
+    type:"image/x-icon",
+    href:"favicon.ico"
+  },
   { rel: "stylesheet", href: normalizeCss },
 ];
 
